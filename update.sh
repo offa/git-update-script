@@ -21,7 +21,7 @@ for dir in *; do
     (
         if [ -d "${dir}"  ]
         then
-            git_update ${dir} > $USH_RAND$USH_CNT.txt
+            git_update ${dir} > $USH_RAND$USH_CNT.txt 2>&1
         fi
     ) &
     if [ -d "${dir}" ]; then
