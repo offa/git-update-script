@@ -3,6 +3,7 @@
 USH_CNT=0
 USH_RAND=$RANDOM$RANDOM
 
+
 shopt -s nullglob
 
 function git_update()
@@ -11,7 +12,7 @@ function git_update()
     then
         echo "fetching $1"
         cd $1; git fetch --all --prune
-        cd -
+        cd $OLDPWD
     else
         echo "skipping $1 - .git/ not found"
     fi
