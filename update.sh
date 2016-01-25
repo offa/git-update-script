@@ -14,7 +14,7 @@ function git_update()
         echo -e "\e[1;32m =====> $1 \e[0m\n${OUTPUT}\n"
         cd $OLDPWD
     else
-        echo "skipping $1 - .git/ not found"
+        echo -e "skipping $1 - .git/ not found\n"
     fi
 }
 
