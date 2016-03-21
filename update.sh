@@ -10,7 +10,8 @@ function git_update()
     if [ -d "$1/.git/" ]
     then
         cd $1;
-        echo -e "\e[1;32m =====> $1 \e[0m\n$(git fetch --all --prune)\n"
+        echo -e "\n\e[1;32m =====> $1 \e[0m"
+        git fetch --all --prune
         cd $OLDPWD
     else
         echo -e "skipping $1 - .git/ not found\n"
@@ -18,12 +19,10 @@ function git_update()
 }
 
 for dir in *; do
-    (
     if [ -d "${dir}"  ]
     then
         git_update ${dir}
     fi
-    ) &
 done
 
 wait
