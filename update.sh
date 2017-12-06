@@ -5,11 +5,11 @@ shopt -s nullglob
 
 echo -e "\e[1;31m Start fetching all Git projects in '${PWD}' \e[0m\n"
 
-function git_update()
+git_update()
 {
     echo -e "\n\e[1;32m =====> $1 \e[0m"
 
-    if [ -d "$1/.git/" ]
+    if [[ -d "$1/.git/" ]]
     then
         cd $1;
         git fetch --all --prune
@@ -20,7 +20,7 @@ function git_update()
 }
 
 for dir in *; do
-    if [ -d "${dir}"  ]
+    if [[ -d "${dir}" ]]
     then
         git_update ${dir}
     fi
